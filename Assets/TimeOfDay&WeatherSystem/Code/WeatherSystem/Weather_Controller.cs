@@ -479,9 +479,10 @@ public class Weather_Controller : MonoBehaviour
         {
             if (CurrParticles.gameObject.GetComponent<ParticleSystem>() != false)
             {
-                if (CurrParticles.gameObject.GetComponent<ParticleSystem>().enableEmission == false)
+                var em = CurrParticles.gameObject.GetComponent<ParticleSystem>().emission;
+                if (!em.enabled)
                 {
-                    CurrParticles.gameObject.GetComponent<ParticleSystem>().enableEmission = true;
+                    em.enabled = true;
 
                     if (CurrParticles.transform.childCount != 0)
                     {
